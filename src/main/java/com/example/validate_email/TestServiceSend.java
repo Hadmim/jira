@@ -29,6 +29,8 @@ public class TestServiceSend {
     ValidateEmail valdmock;
     @Mock
     SendEmail sendmock;
+    @Mock
+    Mail mail;
 
 
 
@@ -51,10 +53,7 @@ public class TestServiceSend {
     }
     @Test
     public void  testsend() throws IOException {
-        List<Attachments> listatch=new ArrayList<>();
-
-        Mail mail=new Mail( new Email("hadjer.mimoune@univ-constantine2.dz"),"suj", new Email("hadjer.mimoune@univ-constantine2.dz"),
-                new Content("text/plain", "content"));
+     
         when(sendmock.SendService("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",mail)).thenReturn(true);
 
         boolean issend=Sendtest.send_mail(mail);
